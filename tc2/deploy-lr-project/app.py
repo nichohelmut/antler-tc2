@@ -23,7 +23,7 @@ def get_value_zips():
 @app.route("/predict", methods=['POST'])
 def predict():
     gender_zip, usage_zip, brands_zip = get_value_zips()
-    print(gender_zip,usage_zip,brands_zip)
+    print(gender_zip, usage_zip, brands_zip)
     item = request.form['item']
     print(item)
     brand = int(request.form['brand'])

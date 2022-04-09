@@ -9,8 +9,8 @@ https://www.tooplate.com/view/2117-infinite-loop
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
 
 body {
-	font-family: "Raleway", sans-serif;
-	font-size: 1.2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
   color: #707070;
   margin: 0;
   padding: 0;
@@ -79,9 +79,17 @@ blockquote {
 .tm-navbar {
   position: fixed;
   width: 100%;
+  height: 65px;
   z-index: 1000;
-  background-color: transparent;
+  background-color: #2107FA;
   transition: all 0.3s ease;
+  padding: 0;
+}
+
+.tm-navbar .container-fluid,
+.tm-navbar .container-fluid .tm-next {
+  height: 100%;
+  padding: 0;
 }
 
 .tm-navbar.scroll {
@@ -90,9 +98,19 @@ blockquote {
 }
 
 .navbar-brand {
+  width: 185px;
+  height: 62px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  overflow: hidden;
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
+}
+
+.navbar-brand img {
+  height: 180px;
 }
 
 .navbar-brand:hover,
@@ -120,7 +138,7 @@ blockquote {
 .tm-navbar.scroll .tm-nav-link.current,
 .tm-nav-link:hover {
   color: #FFF;
-  background-color: #369;
+  border-bottom: 1px solid #FFF;
 }
 
 .navbar-toggler {
@@ -145,39 +163,39 @@ blockquote {
 /* Hero */
 
 #infinite {
-	background-color: #222;
-  background-image: url(../img/infinite-loop-01.jpg);
+  background-color: #222;
+  background-image: url('../img/infinite-loop-01.jpg');
   background-repeat: no-repeat;
   height: 100vh;
   min-height: 375px;
   position: relative;
 }
 
-@media (min-height: 600px) and (min-width: 1920px) {
+@media(min-height: 600px) and(min-width: 1920px) {
   #infinite {
     background-size: cover;
   }
 }
 
-@media (min-height: 830px) {
+@media(min-height: 830px) {
   #infinite {
     background-position: center -210px;
   }
 }
 
-@media (min-height: 680px) and (max-height: 829px) {
+@media(min-height: 680px) and(max-height: 829px) {
   #infinite {
     background-position: center -300px;
   }
 }
 
-@media (min-height: 500px) and (max-height: 679px) {
+@media(min-height: 500px) and(max-height: 679px) {
   #infinite {
     background-position: center -400px;
   }
 }
 
-@media (max-height: 499px) {
+@media(max-height: 499px) {
   #infinite {
     background-position: center -450px;
   }
@@ -211,7 +229,7 @@ blockquote {
   right: 0;
 }
 
-@media (max-height: 480px) {
+@media(max-height: 480px) {
   .tm-hero-text-container-inner {
     margin-top: -40px;
   }
@@ -227,11 +245,11 @@ blockquote {
 }
 
 .tm-down-arrow {
-  	color: #FFF;
-    cursor: pointer;
-    background: #357;
-    padding: 15px 40px;
-    transition: all 0.3s ease;
+  color: #FFF;
+  cursor: pointer;
+  background: #2107FA;
+  padding: 15px 40px;
+  transition: all 0.3s ease;
 }
 
 .tm-down-arrow:hover,
@@ -262,22 +280,22 @@ blockquote {
 }
 
 .tm-continue {
-	padding: 20px 0 30px 0;
+  padding: 20px 0 30px;
 }
 
 /* Testimonials */
 #testimonials {
   color: white;
-  background-image: url(../img/infinite-loop-02.jpg);
+  background-image: url('../img/infinite-loop-02.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
 }
 
-@media (max-width: 991px) {
+@media(max-width: 991px) {
   #testimonials {
-    background-image: url(../img/infinite-loop-02-mobile.jpg);
+    background-image: url('../img/infinite-loop-02-mobile.jpg');
   }
 }
 
@@ -506,15 +524,15 @@ figure.effect-honey:hover h2 i {
 }
 
 .tm-container-gallery {
-	padding-top: 30px;
-	}
+  padding-top: 30px;
+}
 
 /* Contact */
 
 #contact {
   color: white;
   background-color: #001828;
-  background-image: url(../img/infinite-loop-03.jpg);
+  background-image: url('../img/infinite-loop-03.jpg');
   background-position: center;
   background-repeat: no-repeat;
   min-height: 980px;
@@ -545,8 +563,8 @@ figure.effect-honey:hover h2 i {
 }
 
 .tm-input {
-	margin: 0 0 20px 0;
-	width: 90%;
+  margin: 0 0 20px;
+  width: 90%;
   padding: 8px 20px;
   border-radius: 6px;
   border: 1px solid white;
@@ -555,16 +573,16 @@ figure.effect-honey:hover h2 i {
 }
 
 .tm-btn-submit {
-	font-size: 0.9em;
-	color: #fff;
-	background-color: #369;
-	width: 50%;
-	margin-bottom: 60px;
+  font-size: 0.9em;
+  color: #fff;
+  background-color: #369;
+  width: 50%;
+  margin-bottom: 60px;
 }
 
 .tm-btn-submit:hover {
-	color: #fff;
-	background-color: #38B;
+  color: #fff;
+  background-color: #38B;
 }
 
 ::placeholder {
@@ -592,11 +610,11 @@ figure.effect-honey:hover h2 i {
 }
 
 .tm-footer a {
-	color: #fff;
+  color: #fff;
 }
 
 .tm-footer a:hover {
-	color: #9CF;
+  color: #9CF;
 }
 
 .tm-footer-link {
@@ -613,9 +631,9 @@ p {
   line-height: 1.9;
 }
 
-@media (min-width: 768px) {
+@media(min-width: 768px) {
   .tm-intro-text-container {
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   .navbar-expand-md .navbar-nav .nav-link {
@@ -624,7 +642,7 @@ p {
   }
 }
 
-@media (min-width: 1200px) {
+@media(min-width: 1200px) {
   .container {
     max-width: 1275px;
   }
@@ -638,7 +656,7 @@ p {
   }
 }
 
-@media (max-width: 991px) {
+@media(max-width: 991px) {
   .tm-intro-text-container {
     padding-left: 15px;
     padding-top: 30px;
@@ -659,7 +677,7 @@ p {
   }
 }
 
-@media (max-width: 767px) {
+@media(max-width: 767px) {
 
   .navbar-nav {
     max-width: 200px;
@@ -674,11 +692,11 @@ p {
 
   .navbar-collapse .nav-link {
     color: #707070;
-	padding-right: 20px;
+    padding-right: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media(max-width: 480px) {
   .tm-gallery-container {
     max-width: 220px;
     margin-left: auto;

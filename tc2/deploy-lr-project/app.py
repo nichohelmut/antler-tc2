@@ -30,12 +30,19 @@ def predict():
     print(brand)
     usage = int(request.form['usage'])
     print(usage)
+    gender = int(request.form['gender'])
+    print(usage)
+    model = int(request.form['model'])
+    print(usage)
     size = int(request.form['size'])
     print(size)
-    prediction = model.predict([[item, brand, usage, size]])
+
+    sale_until = int(request.form['sale_until'])
+    print(size)
+    prediction = model.predict([[item, brand, usage, gender,model,size, sale_until]])
     output = round(abs(prediction[0]), 2)
     return render_template('index1.html',
-                           prediction_text=f'A house with {item} rooms per dwelling and {brand} and located {usage} km to {size} employment centers has a value of ${output}K')
+                           prediction_text=f'A house with {item} rooms per dwelling and {brand} and located {usage} km to {size} employment {sale_until}centers has a value of ${output}K')
 
 
 if __name__ == "__main__":

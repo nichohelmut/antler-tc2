@@ -11,7 +11,10 @@ model = pickle.load(open('model2.pkl', 'rb'))
 
 @app.route("/")
 def hello():
-    return render_template('index1.html')
+    gender_zip, usage_zip, brands_zip = get_value_zips()
+    return render_template('index1.html', 
+        gender=gender_zip, usage=usage_zip, brands=brands_zip,
+        scroll="")
 
 
 def get_value_zips():
@@ -37,11 +40,12 @@ def predict():
     size = int(request.form['size'])
     print(size)
     sale_until = int(request.form['sale_until'])
-    print(size)
+    print(sale_until)
     prediction = model.predict([[brand, usage, gender, size, sale_until]])
     output = round(abs(prediction[0]), 2)
     return render_template('index1.html',
-                           prediction_text=f'A house with {item} rooms per dwelling and {brand} and located {usage} km to {size} employment {sale_until}centers has a value of ${output}K')
+        prediction_text=f'A house with {item} rooms per dwelling and {brand} and located {usage} km to {size} employment {sale_until}centers has a value of ${output}K',
+        gender=gender_zip, usage=usage_zip, brands=brands_zip, scroll="prediction")
 
 
 if __name__ == "__main__":

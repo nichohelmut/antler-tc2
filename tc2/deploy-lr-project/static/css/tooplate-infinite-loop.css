@@ -124,6 +124,7 @@ blockquote {
 
 .nav-item {
   list-style: none;
+  border-bottom: 1px solid transparent;
 }
 
 .tm-nav-link {
@@ -575,7 +576,7 @@ figure.effect-honey:hover h2 i {
 .tm-btn-submit {
   font-size: 0.9em;
   color: #fff;
-  background-color: #369;
+  background-color: #2107FA;
   width: 50%;
   margin-bottom: 60px;
 }
@@ -587,13 +588,14 @@ figure.effect-honey:hover h2 i {
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: gray;
   opacity: 1; /* Firefox */
+  font-size: 14px;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: white;
+  color: gray;
 }
 
 ::-ms-input-placeholder {
@@ -714,4 +716,35 @@ p {
   .tm-gallery-item {
     margin: 0;
   }
+}
+
+/* Extra styles */
+
+.hr-separator {
+  width: 80%;
+  border-top-width: 2px;
+}
+
+.form-prediction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-prediction button {
+  width: 200px;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.container-prediction-input {
+  padding: 0;
+}
+
+.container-prediction-input input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 2px 10px;
+  border: 2px solid gray;
+  border-radius: 5px;
 }

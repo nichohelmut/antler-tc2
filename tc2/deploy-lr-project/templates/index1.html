@@ -55,7 +55,7 @@ https://www.tooplate.com/view/2117-infinite-loop
       <div class="tm-hero-text-container-inner">
         <h2 class="tm-hero-title">7 Lives</h2>
         <p class="tm-hero-subtitle">
-          enabling people to sell their pre-love items at the best price
+          enabling people to sell their pre-loved items at the best price
         </p>
       </div>
     </div>
@@ -74,19 +74,32 @@ https://www.tooplate.com/view/2117-infinite-loop
         <div class="col-lg-12 col-xl-12">
           <div class="tm-intro-text-container">
             <h2 class="tm-text-primary mb-4 tm-section-title">Price Prediction</h2>
-            <p>Introduce the relevant metrics in order to predict the price of the clothes you want to sell:</p>
+            <p>Based on your preferences on how fast you want to sell your items, 7Lives gives you actionable price
+              recommendations. Our technology takes the key attributes of your items, such as brand, model, usage and
+              many more into account and helps you make a good sell!
+            </p>
             <form action="{{url_for('predict')}}" method="post" class="form-prediction">
+
               <div class="container-fluid container-prediction-input">
                 <div class="row">
                   <div class="col"><input type="text" name="item" placeholder="Item" required="required" /></div>
-                  <div class="col"><input type="text" name="brand" placeholder="Brand" required="required" /></div>
+                  <div class="col"><select name="brand">{% for key, value in brands.items() %}
+                      <option value="{{value}}">{{key}}</option>
+                      {% endfor %}
+                    </select></div>
                 </div>
                 <div class="row">
-                  <div class="col"><input type="text" name="usage" placeholder="Usage" required="required" /></div>
-                  <div class="col"><input type="text" name="gender" placeholder="Gender" required="required" /></div>
+                  <div class="col"><select name="usage">{% for key, value in usage.items() %}
+                      <option value="{{value}}">{{key}}</option>
+                      {% endfor %}
+                    </select></div>
+                  <div class="col"><select name="gender">{% for key, value in gender.items() %}
+                      <option value="{{value}}">{{key}}</option>
+                      {% endfor %}
+                    </select></div>
                 </div>
                 <div class="row">
-                  <div class="col"><input type="text" name="model" placeholder="Model" required="required" /></div>
+                  <div class="col"><input type="text" name="model" placeholder="Model" /></div>
                   <div class="col"><input type="text" name="size" placeholder="Size" required="required" /></div>
                 </div>
                 <div class="row">
@@ -103,96 +116,26 @@ https://www.tooplate.com/view/2117-infinite-loop
     </div>
   </section>
 
-  <hr class="hr-separator" />
+  <div class="container-separator">
+    <hr class="hr-separator" />
+  </div>
 
   <section id="whatwedo" class="tm-parallax-2">
     <div class="container">
-      <div class="row tm-content-box">
+      <div class="row tm-content-box py-5">
         <!-- first row -->
         <div class="col-lg-12 col-xl-12">
           <div class="tm-intro-text-container">
             <h2 class="tm-text-primary mb-4 tm-section-title">What We Do</h2>
             <p class="mb-4 tm-intro-text">
-              This is Infinite Loop, free Bootstrap 4.0 HTML template with a parallax effect. This layout is what you
-              can modify and use for your websites. Please spread a word to your friends about our website. Thank you
-              for supporting us. If you have any question, you can contact us or chat with us on our <a
-                href="https://fb.com/tooplate">Tooplate Facebook page</a>.</p>
+              7Lives enables consumers to live a more circular lifestyle. We help you to identify the best selling
+              price for your pre-loved items. No more guesswork, no more selling below market value. Our cutting-edge
+              technology is constantly processing vast amounts of data to give you actionable price recommendations
+              based on just a few simple attributes. Give your pre-loved items another life with 7Lives!</p>
           </div>
         </div>
       </div><!-- first row -->
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="tm-section-pad-top">
-
-    <div class="container tm-container-contact">
-
-      <div class="row">
-
-        <div class="text-center col-12">
-          <h2 class="tm-section-title mb-4">Contact Us</h2>
-          <p class="mb-5">
-            Proin enim orci, tincidunt quis suscipit in, placerat nec est. Vestibulum posuere faucibus posuere. Quisque
-            aliquam velit eget leo blandit egestas. Nulla id posuere felis, quis tristique nulla.
-          </p><br>
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-          <form action="" method="get">
-            <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-            <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
-            <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
-            <button type="submit" class="btn tm-btn-submit">Submit</button>
-          </form>
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-
-          <div class="contact-item">
-            <a rel="nofollow" href="https://www.tooplate.com/contact" class="item-link">
-              <i class="far fa-2x fa-comment mr-4"></i>
-              <span class="mb-0">Chat Online</span>
-            </a>
-          </div>
-
-          <div class="contact-item">
-            <a rel="nofollow" href="mailto:mail@company.com" class="item-link">
-              <i class="far fa-2x fa-envelope mr-4"></i>
-              <span class="mb-0">mail@company.com</span>
-            </a>
-          </div>
-
-          <div class="contact-item">
-            <a rel="nofollow" href="https://www.google.com/maps" class="item-link">
-              <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-              <span class="mb-0">Our Location</span>
-            </a>
-          </div>
-
-          <div class="contact-item">
-            <a rel="nofollow" href="tel:0100200340" class="item-link">
-              <i class="fas fa-2x fa-phone-square mr-4"></i>
-              <span class="mb-0">255-662-5566</span>
-            </a>
-          </div>
-
-          <div class="contact-item">&nbsp;</div>
-
-        </div>
-
-
-      </div><!-- row ending -->
-
-    </div>
-
-    <footer class="text-center small tm-footer">
-      <p class="mb-0">
-        Copyright &copy; 2020 Company Name
-
-        . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p>
-    </footer>
-
   </section>
 
   <script src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
@@ -202,7 +145,10 @@ https://www.tooplate.com/view/2117-infinite-loop
   <script src="{{ url_for('static', filename='js/jquery.singlePageNav.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   <script>
-
+    var scroll = JSON.parse('{{scroll | tojson | safe}}');
+    if (scroll === "prediction") {
+      document.location.hash = '#prediction';
+    }
     function getOffSet() {
       var _offset = 450;
       var windowHeight = window.innerHeight;

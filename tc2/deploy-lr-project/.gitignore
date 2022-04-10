@@ -1,2 +1,6 @@
 .DS_Store
 /venv/
+/ml_model/dataset/thelook.csv
+/ml_model/.ipynb_checkpoints/
+../../.DS_Store
+../.DS_Store

@@ -11,7 +11,10 @@ model = pickle.load(open('model2.pkl', 'rb'))
 
 @app.route("/")
 def hello():
-    return render_template('index1.html')
+    gender_zip, usage_zip, brands_zip = get_value_zips()
+    return render_template('index1.html',
+                           gender=gender_zip, usage=usage_zip, brands=brands_zip,
+                           scroll="")
 
 
 def get_value_zips():
@@ -20,9 +23,16 @@ def get_value_zips():
     return gender_zip, usage_zip, brands_zip
 
 
+def inverse_dicts(usage_zip: dict, brands_zip: dict):
+    usage_map = {v: k for k, v in usage_zip.items()}
+    brands_map = {v: k for k, v in brands_zip.items()}
+    return usage_map, brands_map
+
+
 @app.route("/predict", methods=['POST'])
 def predict():
     gender_zip, usage_zip, brands_zip = get_value_zips()
+    usage_map, brands_map = inverse_dicts(usage_zip, brands_zip)
     item = request.form['item']
     brand = int(request.form['brand'])
     usage = int(request.form['usage'])
@@ -30,10 +40,10 @@ def predict():
     size = int(request.form['size'])
     sale_until = int(request.form['sale_until'])
     prediction = model.predict([[brand, usage, gender, size, sale_until]])
-    print(prediction)
     output = prediction[0]
     return render_template('index1.html',
-                           prediction_text=f'Awesome! You could offer your {usage} {brand} shoe (category {item}) for ${round(output)}, if you sell within the next {sale_until} days!')
+                           prediction_text=f'Awesome! You could offer your {usage_map[usage]} {brands_map[brand]} shoe (category {item}) for ${round(output * 1.2)}, if you sell within the next {sale_until} days!',
+                           gender=gender_zip, usage=usage_zip, brands=brands_zip, scroll="prediction")
 
 
 if __name__ == "__main__":

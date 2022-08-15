@@ -4,3 +4,7 @@
 /ml_model/.ipynb_checkpoints/
 ../../.DS_Store
 ../.DS_Store
+/footy-dev-343115-1ab77dbb8af4.json
+../deploy-lr-project/ml_model/__pycache__/helper.cpython-39.pyc
+../deploy-lr-project/templates/.DS_Store
+../deploy-lr-project/__pycache__/

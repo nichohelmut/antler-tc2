@@ -1,12 +1,21 @@
+import os
 import pickle
 
 import pandas as pd
 from flask import Flask, render_template, request
+from google.cloud import storage
 
-from ml_model.helper import simple_hot_encoding
+from helper import simple_hot_encoding
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "footy-dev-343115-1ab77dbb8af4.json"
 app = Flask(__name__)
-model = pickle.load(open('model2.pkl', 'rb'))
+
+storage_client = storage.Client()
+
+bucket = storage_client.bucket('pricing_model_nhu')
+blob = bucket.blob('model2.pkl')
+pickle_in = blob.download_as_string()
+model = pickle.loads(pickle_in)
 
 
 @app.route("/")
@@ -18,7 +27,7 @@ def hello():
 
 
 def get_value_zips():
-    df = pd.read_csv('ml_model/dataset/thelook2.csv')
+    df = pd.read_csv('dataset/thelook2.csv')
     _, gender_zip, usage_zip, brands_zip = simple_hot_encoding(df)
     return gender_zip, usage_zip, brands_zip
 
@@ -47,4 +56,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get('PORT', 8080))
+    app.run(debug=False, host='0.0.0.0', port=port)

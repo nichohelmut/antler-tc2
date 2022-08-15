@@ -1,0 +1,7 @@
+/venv/
+/model2.pkl
+/dataset/
+/data_gen.ipynb
+/footy-dev-343115-805a08b54672.json
+.DS_Store
+__pycache__/

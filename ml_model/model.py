@@ -1,3 +1,4 @@
+import json
 import pickle
 
 import gcsfs
@@ -41,6 +42,14 @@ with fs.open('gs://pricing_model_nhu/model2.pkl', 'wb') as handle:
 y_test_pred = model.predict(X_test)
 
 mse = mean_squared_error(y_test_pred, y_test, squared=False)
+
+metadata = {
+    'score': model.score(X_num, y_num),
+    'rooted main error': mse
+}
+
+with fs.open('gs://pricing_model_nhu/meta.json', 'w') as handle:
+    json.dump(metadata, handle)  # save the model
 
 # TODO: CHECK SCORE/RMSE
 print(model.predict([[147, 1, 0, 42, 49]]))  # format of input

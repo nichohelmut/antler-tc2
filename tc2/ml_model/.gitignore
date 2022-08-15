@@ -2,6 +2,8 @@
 /model2.pkl
 /dataset/
 /data_gen.ipynb
-/footy-dev-343115-805a08b54672.json
+/footy-dev-343115-af83a33838e0.json
 .DS_Store
-__pycache__/
+__pycache__/!/footy-dev-343115-af83a33838e0.json
+ml_model/__pycache__/
+../.DS_Store

@@ -34,7 +34,7 @@ model = XGBRegressor(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, col
 
 model.fit(X_train, y_train, verbose=True)
 
-fs = gcsfs.GCSFileSystem(project='footy-dev-343115', token="footy-dev-343115-805a08b54672.json")
+fs = gcsfs.GCSFileSystem(project='footy-dev-343115', token="footy-dev-343115-af83a33838e0.json")
 with fs.open('gs://pricing_model_nhu/model2.pkl', 'wb') as handle:
     pickle.dump(model, handle)  # save the model
 
